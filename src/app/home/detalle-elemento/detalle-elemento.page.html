@@ -1,0 +1,94 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title *ngIf="elemento">{{elemento.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="elemento">
+    <app-card [title]="'Symbol'" [description]="elemento.symbol"></app-card>
+    <app-card [title]="'Appearance'" [description]="elemento.appearance"></app-card>
+    <app-card [title]="'Atomic Mass'" [description]="elemento.atomic_mass"></app-card>
+    <ion-card>
+      <ion-row>
+        <ion-col>
+          <app-card-content [title]="'Boil'" [description]="elemento.boil"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Category'" [description]="elemento.category"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Color'" [description]="elemento.color"></app-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <app-card-content [title]="'Discovered by'" [description]="elemento.discovered_by"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Melt'" [description]="elemento.melt"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Molar Heat'" [description]="elemento.molar_heat"></app-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <app-card-content [title]="'Named by'" [description]="elemento.named_by"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Number'" [description]="elemento.number"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Phase'" [description]="elemento.phase"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Phase'" [description]="elemento.phase"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Spectral Img'" [description]="elemento.spectral_img"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <app-card-content [title]="'Xpos'" [description]="elemento.xpos"></app-card-content>
+        </ion-col>
+        <ion-col>
+          <ion-card-header>
+            <ion-card-title>
+              Shells
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-infinite-scroll *ngFor="let item of elemento.shells">
+              {{item}}
+            </ion-infinite-scroll>
+          </ion-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <app-card-content [title]="'Electron onfiguration'" [description]="elemento.electron_configuration"></app-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <app-card-content [title]="'Electron Configuration Semantic'" [description]="elemento.electron_configuration_semantic"></app-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <app-card-content [title]="'Electron Affinity'" [description]="elemento.electron_affinity"></app-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <app-card-content [title]="'Electronegativity pauling'" [description]="elemento.electronegativity_pauling"></app-card-content>
+        </ion-col>
+        <ion-col size="12">
+          <ion-card-header>
+            <ion-card-title>
+              Ionization Energies
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-infinite-scroll *ngFor="let item of elemento.ionization_energies">
+              {{item}}
+            </ion-infinite-scroll>
+          </ion-card-content>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+    <app-card [title]="'Summary'" [description]="elemento.summary"></app-card>
+  </div>
+  <app-loanding *ngIf="loanding"></app-loanding>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Elementos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="!loanding">
+    <div *ngFor="let elemento of elementos">
+      <ion-item [routerLink]="['/home/detalle-elemento', elemento.symbol]">
+        <ion-avatar slot="start" class="avatar" [ngStyle]="{'background-color': getColor(elemento)}">
+          <ion-label>{{elemento.symbol}}</ion-label>
+        </ion-avatar>
+        <ion-label>
+          <h2>{{elemento.name}}</h2>
+          <p>{{elemento.summary}}</p>
+        </ion-label>
+      </ion-item>
+    </div>
+  </ion-list>
+  <app-loanding *ngIf="loanding"></app-loanding>
+</ion-content>
