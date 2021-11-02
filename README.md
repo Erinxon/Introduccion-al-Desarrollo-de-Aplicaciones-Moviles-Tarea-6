@@ -2,6 +2,8 @@
 
 # Tarea 6 - Ionic
 
+# Erinxon Santana | 2019-7708
+
 Realiza una apliacion en flutter que muestre un listado con todos los elementos de la tabla periódica, Puede ser tipo lista o mosaico con el simbolo de cada elemento. 
 
 Al hacer click en un elemento especifico nos mostraras mucha información sobre el elemento seleccionado. La información a desplegar la puedes usar del archivo json que esta en esta semana a lado de esta tarea. 
